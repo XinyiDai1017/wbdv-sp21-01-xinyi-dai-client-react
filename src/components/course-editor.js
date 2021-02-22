@@ -1,8 +1,21 @@
 import React from 'react'
 import './course-editor.css'
+import {Link} from "react-router-dom";
 
-const CourseEditor = () =>
+const CourseEditor = ({history}) =>
     <div>
+        <div>
+            <h2>
+                <Link to="/courses/table">
+                    <i className="fas fa-arrow-left"></i>
+                </Link>
+                Course Editor
+                <i onClick={() => history.goBack()}
+                   className="fas fa-times float-right"></i>
+                {/*<i onClick={() => props.history.goBack()}*/}
+                {/*   className="fas fa-times float-right"></i>*/}
+            </h2>
+        </div>
         <nav class="navbar-expand-lg navbar">
             <div class="container-fluid">
                 <a class="nav-link col-3 top-text-first" href="#">
@@ -126,12 +139,7 @@ const CourseEditor = () =>
                     </a>
                 </div>
             </div>
-            <div class="fixed-bottom">
-                <a class="float-right bottom-plus"
-                   href="../course-editor/course-editor.template.client.html">
-                    <i class="fas fa-plus-circle fa-2x"></i>
-                </a>
-            </div>
+
         </div>
     </div>
 

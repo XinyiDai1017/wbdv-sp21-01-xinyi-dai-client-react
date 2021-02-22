@@ -4,16 +4,17 @@ import CourseGrid from "./course-grid";
 import CourseEditor from "./course-editor";
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../services/course-service";
+import './course-manager.css'
 
 class CourseManager extends React.Component {
     state = {
         courses: [],
         qwe: 123,
-        sdf: 456
+        sdf: 456,
+        courseName: ""
     }
-
     updateCourse = (course) => {
-        console.log(course)
+        console.log("2. ", course);
         courseService.updateCourse(course._id, course)
             .then(status => this.setState((prevState) => ({
                 ...prevState,
@@ -38,11 +39,17 @@ class CourseManager extends React.Component {
         findAllCourses()
             .then(courses => this.setState({courses}))
 
+    handleAddCourse = ({target}) => {
+        this.setState({
+            courseName: target.value
+        })
+    }
+
     addCourse = () => {
         const newCourse = {
-            title: "New Course",
-            owner: "New Owner",
-            lastModified: "Never"
+            title: this.state.courseName,
+            owner: "me",
+            lastModified: "1/1/2021"
         }
         courseService.createCourse(newCourse)
             .then(course => this.setState(
@@ -53,7 +60,6 @@ class CourseManager extends React.Component {
                         course
                     ]
                 })))
-
         // this.state.courses.push(newCourse)
         // this.setState(this.state)
     }
@@ -93,11 +99,25 @@ class CourseManager extends React.Component {
     render() {
         return(
             <div>
-                <Link to="/">
-                    <i className="fas fa-2x fa-home float-right"></i>
-                </Link>
-                <h1>Course Manager</h1>
-                <button onClick={this.addCourse}>Add Course</button>
+                <div className="wbdv-sticky-top wbdv-padding-12px">
+                    <div className="row">
+                        <div className="col-1">
+                            <i className="fas fa-bars fa-2x"></i>
+                        </div>
+                        <div className="col-3 d-none d-lg-block">
+                            <h4>Course Manager</h4>
+                        </div>
+                        <div className="col-7">
+                            <input className="form-control" type="text" onChange={this.handleAddCourse}/>
+                        </div>
+                        <div className="col-1 plus-right">
+                            <i onClick={this.addCourse}
+                               className="fas fa-plus-circle fa-2x first-plus">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+
                 <Route path="/courses/table">
                     <CourseTable
                         updateCourse={this.updateCourse}
@@ -118,6 +138,14 @@ class CourseManager extends React.Component {
                 <Route path="/courses/editor"
                        render={(props) => <CourseEditor {...props}/>}>
                 </Route>
+                <div className="fixed-bottom">
+                    <Link to="/">
+                        <i className="fas fa-2x fa-home float-left bottom-home"></i>
+                    </Link>
+                    <i onClick={this.addCourse}
+                       className="fas fa-plus-circle fa-4x float-right bottom-plus">
+                    </i>
+                </div>
             </div>
         )
     }

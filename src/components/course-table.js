@@ -1,6 +1,7 @@
 import React from 'react'
 import CourseRow from "./course-row";
 import {Link} from "react-router-dom";
+import './course-table.css'
 
 export default class CourseTable extends
     React.Component {
@@ -14,15 +15,15 @@ export default class CourseTable extends
             <div>
                 <table className="table">
                     <thead>
-                        <tr>
+                        <tr >
                             <th >Title</th>
-                            <th >Owned by</th>
-                            <th >Last modified</th>
-                            <th className="float-right">
+                            <th className="d-none d-md-table-cell">Owned by</th>
+                            <th className="d-none d-lg-table-cell">Last modified</th>
+                            <th className="icons-right">
                                 <i className="fas fa-folder"></i>
-                                &nbsp;
-                                <i className="fas fa-sort-alpha-down"></i>
-                                &nbsp;
+                                &nbsp;&nbsp;
+                                <i className="fas fa-sort-alpha-up-alt"></i>
+                                &nbsp;&nbsp;
                                 <Link to="/courses/grid">
                                     <i className="fas fa-th"></i>
                                 </Link>

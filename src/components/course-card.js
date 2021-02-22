@@ -1,21 +1,63 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from "react-router-dom";
+import './course-card.css'
 
-const CourseCard = ({course}) =>
-    <div className="col-4">
-        <div className="card">
-            <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png" className="card-img-top" alt="..."/>
-            <div className="card-body">
-                <h5 className="card-title">{course.title}</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <img src={``}/>
-                <Link to="/courses/editor" className="btn btn-primary">
-                    {course.title}
-                </Link>
-                <i className="fas fa-trash"></i>
+const CourseCard = (
+    {
+        course,
+        deleteCourse,
+        updateCourse,
+        title,
+    }) => {
+    const [editing, setEditing] = useState(false)
+    const [newTitle, setNewTitle] = useState(title)
+
+    const saveTitle = () => {
+        setEditing(false)
+        const newCourse = {
+            ...course,
+            title: newTitle
+        }
+        updateCourse(newCourse)
+    }
+
+    return (
+        <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+            <br/>
+            <div className="card">
+                <div className="my-controls-at-top-right" align="right">
+                    {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
+                    {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times"></i>}
+                </div>
+
+                <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png" className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    {
+                        !editing &&
+                        <Link to="/courses/editor">
+                            <h5 className="card-title">{course.title}</h5>
+                        </Link>
+                    }
+                    {
+                        editing &&
+                        <input
+                            onChange={(event) => setNewTitle(event.target.value)}
+                            value={newTitle}
+                            className="form-control"/>
+                    }
+
+                    <p className="card-text">
+                        Some description.</p>
+                    <img src={``}/>
+                    <Link to="/courses/editor" className="btn btn-primary">
+                        {course.title}
+                    </Link>
+                </div>
+                <div className="card-footer">
+                    <i onClick={() => setEditing(true)} className="fas fa-edit float-right title-icons"></i>
+                </div>
             </div>
         </div>
-    </div>
-
+    )
+}
 export default CourseCard

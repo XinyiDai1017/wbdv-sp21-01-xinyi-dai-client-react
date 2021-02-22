@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
+import './course-row.css'
 
 const CourseRow = (
     {
@@ -27,9 +28,14 @@ const CourseRow = (
             <td>
                 {
                     !editing &&
-                    <Link to="/courses/editor">
-                        {title}
-                    </Link>
+                        <div>
+                            <i className="fas fa-file-alt title-icons"></i>
+                            &nbsp;
+                            <Link to="/courses/editor">
+                                {title}
+                            </Link>
+                        </div>
+
                 }
                 {
                     editing &&
@@ -39,12 +45,12 @@ const CourseRow = (
                         className="form-control"/>
                 }
             </td>
-            <td>{owner}</td>
-            <td>{lastModified}</td>
-            <td>
-                <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
-                {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}
+            <td className="d-none d-md-table-cell">{owner}</td>
+            <td className="d-none d-lg-table-cell">{lastModified}</td>
+            <td align="right">
+                {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit title-icons"></i>}
                 {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
+                {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times"></i>}
             </td>
         </tr>
     )
