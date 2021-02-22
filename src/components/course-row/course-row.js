@@ -49,8 +49,8 @@ const CourseRow = (
             <td className="d-none d-lg-table-cell">{lastModified}</td>
             <td align="right">
                 {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit title-icons"></i>}
-                {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
-                {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times"></i>}
+                {editing && <i onClick={() => saveTitle()} className="fas fa-check check-green"></i>}
+                {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times times-red"></i>}
             </td>
         </tr>
     )

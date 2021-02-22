@@ -28,8 +28,8 @@ const CourseCard = (
             <br/>
             <div className="card">
                 <div className="my-controls-at-top-right" align="right">
-                    {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
-                    {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times"></i>}
+                    {editing && <i onClick={() => saveTitle()} className="fas fa-check green-check"></i>}
+                    {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times red-times"></i>}
                 </div>
 
                 <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png" className="card-img-top" alt="..."/>
