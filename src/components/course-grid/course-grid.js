@@ -2,10 +2,10 @@ import React from 'react'
 import CourseCard from "../course-card/course-card";
 import {Link} from "react-router-dom";
 import "./course-grid.css"
-import {deleteCourse, updateCourse} from "../../services/course-service";
+// import {deleteCourse, updateCourse} from "../../services/course-service";
 import CourseRow from "../course-row/course-row";
 
-const CourseGrid = ({courses}) =>
+const CourseGrid = ({courses, updateCourse, deleteCourse}) =>
     <div>
         <div className="row">
             <div className="col-5 d-none d-md-block">
