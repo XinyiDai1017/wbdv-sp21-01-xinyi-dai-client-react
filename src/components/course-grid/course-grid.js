@@ -1,6 +1,9 @@
 import React from 'react'
-import CourseCard from "./course-card/course-card";
+import CourseCard from "../course-card/course-card";
 import {Link} from "react-router-dom";
+import "./course-grid.css"
+import {deleteCourse, updateCourse} from "../../services/course-service";
+import CourseRow from "../course-row/course-row";
 
 const CourseGrid = ({courses}) =>
     <div>
@@ -12,7 +15,7 @@ const CourseGrid = ({courses}) =>
                 Owned by me
                 <i className="fa fa-caret-down"></i>
             </div>
-            <div className="col-3" align="right">
+            <div className="col-md-3 icon-right">
                 <i className="fas fa-folder"></i>
                 &nbsp;&nbsp;
                 <i className="fas fa-sort-alpha-up-alt"></i>
@@ -28,7 +31,13 @@ const CourseGrid = ({courses}) =>
         <div className="row">
             {
                 courses.map(course =>
-                    <CourseCard course={course}/>
+                    <CourseCard
+                        key={course._id}
+                        course={course}
+                        updateCourse={updateCourse}
+                        deleteCourse={deleteCourse}
+                        title={course.title}
+                    />
                 )
             }
         </div>
