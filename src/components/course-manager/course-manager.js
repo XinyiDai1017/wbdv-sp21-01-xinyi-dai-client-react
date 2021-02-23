@@ -14,7 +14,6 @@ class CourseManager extends React.Component {
         courseName: ""
     }
     updateCourse = (course) => {
-        console.log("2. ", course);
         courseService.updateCourse(course._id, course)
             .then(status => this.setState((prevState) => ({
                 ...prevState,
@@ -59,7 +58,9 @@ class CourseManager extends React.Component {
                         ...prevState.courses,
                         course
                     ]
-                })))
+                })
+            ))
+        this.setState({courseName: ""});
         // this.state.courses.push(newCourse)
         // this.setState(this.state)
     }
@@ -108,7 +109,7 @@ class CourseManager extends React.Component {
                             <h4>Course Manager</h4>
                         </div>
                         <div className="col-10 col-lg-7">
-                            <input className="form-control" type="text" onChange={this.handleAddCourse}/>
+                            <input className="form-control" type="text" onChange={this.handleAddCourse} value={this.state.courseName}/>
                         </div>
                         <div className="col-1 plus-right">
                             <i onClick={this.addCourse}
@@ -132,6 +133,7 @@ class CourseManager extends React.Component {
                 </Route>
                 <Route path="/courses/grid">
                     <CourseGrid
+                        updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
                 </Route>
