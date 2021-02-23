@@ -3,7 +3,7 @@ import './course-editor.css'
 import {Link} from "react-router-dom";
 
 const CourseEditor = ({history}) =>
-    <div>
+    <div id="root">
         <div>
             <h2>
                 <Link to="/courses/table">
@@ -12,8 +12,6 @@ const CourseEditor = ({history}) =>
                 Course Editor
                 <i onClick={() => history.goBack()}
                    className="fas fa-times float-right"></i>
-                {/*<i onClick={() => props.history.goBack()}*/}
-                {/*   className="fas fa-times float-right"></i>*/}
             </h2>
         </div>
         <nav className="navbar-expand-lg navbar">
@@ -132,11 +130,6 @@ const CourseEditor = ({history}) =>
                         Preview
                         <i class="fas fa-toggle-off"></i>
                     </div>
-                    <a type="button"
-                       class="btn btn-outline-danger"
-                       href="../index.html">
-                        Cancel
-                    </a>
                 </div>
             </div>
 
