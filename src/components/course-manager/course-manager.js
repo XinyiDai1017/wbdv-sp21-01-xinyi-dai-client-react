@@ -1,6 +1,6 @@
 import React from 'react'
 import CourseTable from "../course-table/course-table";
-import CourseGrid from "../course-grid";
+import CourseGrid from "../course-grid/course-grid";
 import CourseEditor from "../course-editor/course-editor";
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
@@ -107,7 +107,7 @@ class CourseManager extends React.Component {
                         <div className="col-3 d-none d-lg-block">
                             <h4>Course Manager</h4>
                         </div>
-                        <div className="col-7">
+                        <div className="col-10 col-lg-7">
                             <input className="form-control" type="text" onChange={this.handleAddCourse}/>
                         </div>
                         <div className="col-1 plus-right">
@@ -118,7 +118,7 @@ class CourseManager extends React.Component {
                     </div>
                 </div>
 
-                {/*<Route path="/courses/">*/}
+                {/*<Route path="/courses">*/}
                 {/*    <CourseTable*/}
                 {/*        updateCourse={this.updateCourse}*/}
                 {/*        deleteCourse={this.deleteCourse}*/}

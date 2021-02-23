@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9510319f-9d38-463c-8328-1a71dac28a88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-card/course-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-card/course-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-card/course-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-row/course-row.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-row/course-row.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-row/course-row.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-row/course-row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-grid/course-grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-table/course-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-table/course-table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,27 +51,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/course-grid" />
       <recent name="$PROJECT_DIR$/src/components/course-table" />
       <recent name="$PROJECT_DIR$/src/components/course-row" />
       <recent name="$PROJECT_DIR$/src/components/course-manager" />
       <recent name="$PROJECT_DIR$/src/components/course-editor" />
-      <recent name="$PROJECT_DIR$/src/components/course-card" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
@@ -97,7 +83,8 @@
       <workItem from="1613628170226" duration="10000" />
       <workItem from="1613628196641" duration="13000" />
       <workItem from="1613628990911" duration="2095000" />
-      <workItem from="1613713680265" duration="38963000" />
+      <workItem from="1613713680265" duration="42542000" />
+      <workItem from="1614036650923" duration="3350000" />
     </task>
     <servers />
   </component>
