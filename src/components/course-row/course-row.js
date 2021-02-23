@@ -45,8 +45,8 @@ const CourseRow = (
                         className="form-control"/>
                 }
             </td>
-            <td className="d-none d-md-table-cell">{owner}</td>
-            <td className="d-none d-lg-table-cell">{lastModified}</td>
+            <td className="d-none d-md-table-cell ">{owner}</td>
+            <td className="d-none d-lg-table-cell ">{lastModified}</td>
             <td align="right">
                 {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit title-icons"></i>}
                 {editing && <i onClick={() => saveTitle()} className="fas fa-check check-green"></i>}

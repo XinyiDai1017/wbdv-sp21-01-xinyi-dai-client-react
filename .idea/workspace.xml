@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9510319f-9d38-463c-8328-1a71dac28a88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-grid/course-grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-card/course-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-card/course-card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-grid/course-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-grid/course-grid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-row/course-row.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-row/course-row.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-row/course-row.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-row/course-row.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-table/course-table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-table/course-table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-table/course-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-table/course-table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +53,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -84,7 +90,7 @@
       <workItem from="1613628196641" duration="13000" />
       <workItem from="1613628990911" duration="2095000" />
       <workItem from="1613713680265" duration="42542000" />
-      <workItem from="1614036650923" duration="3350000" />
+      <workItem from="1614036650923" duration="10960000" />
     </task>
     <servers />
   </component>

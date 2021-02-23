@@ -16,39 +16,39 @@ const CourseEditor = ({history}) =>
                 {/*   className="fas fa-times float-right"></i>*/}
             </h2>
         </div>
-        <nav class="navbar-expand-lg navbar">
-            <div class="container-fluid">
-                <a class="nav-link col-3 top-text-first" href="#">
-                    <i class="fas fa-times col-2"></i>
+        <nav className="navbar-expand-lg navbar">
+            <div className="container-fluid">
+                <a className="nav-link col-3 top-text-first" href="#">
+                    <i className="fas fa-times col-2"></i>
                     &nbsp;
                     CS5610 - WebDev
                 </a>
 
-                <div class="collapse navbar-collapse col-9" id="navbarSupportedContent" align="center">
-                    <ul class="navbar-nav me-auto lg-0">
-                        <li class="nav-item col-3">
-                            <a class="nav-link top-text" aria-current="page" href="#">
+                <div className="collapse navbar-collapse col-9" id="navbarSupportedContent" align="center">
+                    <ul className="navbar-nav me-auto lg-0">
+                        <li className="nav-item col-3">
+                            <a className="nav-link top-text" aria-current="page" href="#">
                                 Build
                             </a>
                         </li>
-                        <li class="nav-item col-3">
-                            <a class="nav-link top-text active" href="#">Pages</a>
+                        <li className="nav-item col-3">
+                            <a className="nav-link top-text active" href="#">Pages</a>
                         </li>
-                        <li class="nav-item col-3">
-                            <a class="nav-link top-text" href="#">Theme</a>
+                        <li className="nav-item col-3">
+                            <a className="nav-link top-text" href="#">Theme</a>
                         </li>
-                        <li class="nav-item col-3">
-                            <a class="nav-link top-text" href="#" tabindex="-1" aria-disabled="true">Store</a>
+                        <li className="nav-item col-3">
+                            <a className="nav-link top-text" href="#" tabIndex="-1" aria-disabled="true">Store</a>
                         </li>
-                        <li class="nav-item col-3">
-                            <a class="nav-link top-text" href="#" tabindex="-1" aria-disabled="true">Apps</a>
+                        <li className="nav-item col-3">
+                            <a className="nav-link top-text" href="#" tabIndex="-1" aria-disabled="true">Apps</a>
                         </li>
-                        <li class="nav-item col-3">
-                            <a class="nav-link top-text" href="#" tabindex="-1" aria-disabled="true">Settings</a>
+                        <li className="nav-item col-3">
+                            <a className="nav-link top-text" href="#" tabIndex="-1" aria-disabled="true">Settings</a>
                         </li>
-                        <li class="nav-item col-2">
-                            <a class="nav-link top-text" href="#" tabindex="-1" aria-disabled="true">
-                                <i class="fa fa-plus"></i>
+                        <li className="nav-item col-2">
+                            <a className="nav-link top-text" href="#" tabIndex="-1" aria-disabled="true">
+                                <i className="fa fa-plus"></i>
                             </a>
                         </li>
                     </ul>
@@ -56,40 +56,40 @@ const CourseEditor = ({history}) =>
             </div>
         </nav>
 
-        <div class="container-fluid ">
-            <div class="row">
-                <div class="col-3 modules-bg">
-                    <ul class="list-group">
-                        <a class="list-group-item active">
+        <div className="container-fluid ">
+            <div className="row">
+                <div className="col-3 modules-bg">
+                    <ul className="list-group">
+                        <a className="list-group-item active">
                             Module 1 - jQuery
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <a class="list-group-item">
+                        <a className="list-group-item">
                             Module 2 - React
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <a class="list-group-item">
+                        <a className="list-group-item">
                             Module 3 - Redux
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <a class="list-group-item">
+                        <a className="list-group-item">
                             Module 4 - Native
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <a class="list-group-item">
+                        <a className="list-group-item">
                             Module 5 - Angular
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <a class="list-group-item">
+                        <a className="list-group-item">
                             Module 6 - Node
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <a class="list-group-item">
+                        <a className="list-group-item">
                             Module 7 - Mongo
-                            <i class="fas fa-times float-right" ></i>
+                            <i className="fas fa-times float-right" ></i>
                         </a>
-                        <div class="add-module-list">
-                            <i class="fas fa-plus plus-module float-right" ></i>
+                        <div className="add-module-list">
+                            <i className="fas fa-plus plus-module float-right" ></i>
                         </div>
                     </ul>
                     <br/>
@@ -118,10 +118,10 @@ const CourseEditor = ({history}) =>
                             <a class="nav-link topic-text" href="#">Topic 3</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link topic-text" href="#" tabindex="-1" aria-disabled="true">Topic 4</a>
+                            <a class="nav-link topic-text" href="#" tabIndex="-1" aria-disabled="true">Topic 4</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link topic-text" href="#" tabindex="-1" aria-disabled="true">
+                            <a class="nav-link topic-text" href="#" tabIndex="-1" aria-disabled="true">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </li>
