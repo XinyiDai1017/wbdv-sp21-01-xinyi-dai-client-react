@@ -101,38 +101,50 @@ class CourseManager extends React.Component {
     render() {
         return(
             <div>
-                <div className="wbdv-sticky-top wbdv-padding-12px">
-                    <div className="row">
-                        <div className="col-1">
-                            <i className="fas fa-bars fa-2x"></i>
-                        </div>
-                        <div className="col-3 d-none d-lg-block">
-                            <h4>Course Manager</h4>
-                        </div>
-                        <div className="col-10 col-lg-7">
-                            <input className="form-control" type="text" onChange={this.handleAddCourse} value={this.state.courseName}/>
-                        </div>
-                        <div className="col-1 plus-right">
-                            <i onClick={this.addCourse}
-                               className="fas fa-plus-circle fa-2x first-plus">
-                            </i>
+                <Route path= {["/courses/table", "/courses"]} exact={true}>
+                    <div className="wbdv-sticky-top wbdv-padding-12px">
+                        <div className="row">
+                            <div className="col-1">
+                                <i className="fas fa-bars fa-2x"></i>
+                            </div>
+                            <div className="col-3 d-none d-lg-block">
+                                <h4>Course Manager</h4>
+                            </div>
+                            <div className="col-10 col-lg-7">
+                                <input className="form-control" type="text" onChange={this.handleAddCourse} value={this.state.courseName}/>
+                            </div>
+                            <div className="col-1 plus-right">
+                                <i onClick={this.addCourse}
+                                   className="fas fa-plus-circle fa-2x first-plus">
+                                </i>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                {/*<Route path="/courses">*/}
-                {/*    <CourseTable*/}
-                {/*        updateCourse={this.updateCourse}*/}
-                {/*        deleteCourse={this.deleteCourse}*/}
-                {/*        courses={this.state.courses}/>*/}
-                {/*</Route>*/}
-                <Route path="/courses/table">
                     <CourseTable
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
                 </Route>
+
                 <Route path="/courses/grid">
+                    <div className="wbdv-sticky-top wbdv-padding-12px">
+                        <div className="row">
+                            <div className="col-1">
+                                <i className="fas fa-bars fa-2x"></i>
+                            </div>
+                            <div className="col-3 d-none d-lg-block">
+                                <h4>Course Manager</h4>
+                            </div>
+                            <div className="col-10 col-lg-7">
+                                <input className="form-control" type="text" onChange={this.handleAddCourse} value={this.state.courseName}/>
+                            </div>
+                            <div className="col-1 plus-right">
+                                <i onClick={this.addCourse}
+                                   className="fas fa-plus-circle fa-2x first-plus">
+                                </i>
+                            </div>
+                        </div>
+                    </div>
                     <CourseGrid
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
