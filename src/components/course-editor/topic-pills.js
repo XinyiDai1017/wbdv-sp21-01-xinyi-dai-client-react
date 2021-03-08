@@ -6,63 +6,79 @@ import topicService from "../../services/topic-service"
 
 const TopicPills = (
     {
-        topics=[
-            {_id: "123", title: "Lesson A"},
-            {_id: "123", title: "Lesson B"},
-            {_id: "123", title: "Lesson C"}
-        ],
+        myTopics=[],
+        createTopic,
+        deleteTopic,
+        updateTopic,
         findTopicsForLesson,
-        createTopicsForLesson
     }) => {
     const {courseId, moduleId, lessonId, topicId} = useParams();
     useEffect(() => {
-        console.log("LOAD TOPICS FOR LESSON: " + topicId)
-        if(lessonId !== "undefined" && typeof lessonId !== "undefined") {
-            findTopicsForLesson(lessonId)
+        if (lessonId !== 'undefined' && typeof lessonId !== undefined) {
+            findTopicsForLesson(lessonId);
         }
-    }, [moduleId, lessonId])
+    }, [moduleId, lessonId, topicId, findTopicsForLesson]);
     return(
         <div>
             {/*<h2>Lessons</h2>*/}
             <ul className="nav nav-pills">
                 {
-                    topics.map(topic =>
-                        <li className="nav-item">
+                    myTopics.map(topic =>
+                        <li className={`nav-item ${topic._id === topicId ? 'active' : ''}`} key={topic._id}>
                             <EditableItem
-                                active={topic._id === topicId}
                                 to={`/courses/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
+                                updateItem={updateTopic}
+                                deleteItem={deleteTopic}
+                                active={topic._id === topicId}
                                 item={topic}/>
                         </li>
                     )
                 }
-                <li>
-                    <i onClick={() => createTopicsForLesson(lessonId)} className="fas fa-plus"></i>
+                <li className="nav-item">
+                    <i onClick={() => createTopic(lessonId)} className="fas fa-plus"></i>
                 </li>
             </ul>
         </div>)}
 
-const stpm = (state) => ({
-    topics: state.topicReducer.topics
-})
-const dtpm = (dispatch) => ({
-    findTopicsForLesson: (lessonId) => {
-        console.log("LOAD TOPICS FOR LESSON:")
-        console.log(lessonId)
-        topicService.findTopicsForLesson(lessonId)
-            .then(topics => dispatch({
-                type: "FIND_TOPICS",
-                topics
-            }))
-    },
-    createTopicsForLesson: (lessonId) => {
-        console.log("CREATE TOPICS FOR LESSON: " + lessonId)
-        topicService
-            .createTopicsForLesson(lessonId, {title: "New Topic"})
-            .then(topic => dispatch({
-                type: "CREATE_TOPIC",
-                topic
-            }))
+const stpm = (state) => {
+    return {
+        myTopics: state.topicReducer.topics
     }
-})
+}
 
-export default connect(stpm, dtpm)(TopicPills)
+const dtpm = (dispatch) => {
+    return {
+        createTopic: (lessonId) => {
+            // console.log("CREATE TOPICS FOR LESSON: " + lessonId)
+            topicService.createTopic(lessonId, {title: "New Topic"})
+                .then(theActualTopic => dispatch({
+                    type: "CREATE_TOPIC",
+                    topic: theActualTopic
+                }))
+        },
+        deleteTopic: (item) =>
+            topicService.deleteTopic(item._id)
+                .then(status => dispatch({
+                    type: "DELETE_TOPIC",
+                    topicToDelete: item
+                })),
+        updateTopic: (topic) =>
+            topicService.updateTopic(topic._id, topic)
+                .then(status => dispatch({
+                    type: "UPDATE_TOPIC",
+                    topic
+                })),
+        findTopicsForLesson: (lessonId) => {
+            // console.log("LOAD TOPICS FOR LESSON:")
+            // console.log(lessonId)
+            topicService.findTopicsForLesson(lessonId)
+                .then(theTopics => dispatch({
+                    type: "FIND_TOPICS_FOR_LESSON",
+                    topics: theTopics
+                }))
+        }
+    }
+}
+
+export default connect(stpm, dtpm)
+(TopicPills)

@@ -20,7 +20,7 @@ const reducer = combineReducers({
 const store = createStore(reducer)
 
 const CourseEditor = ({history}) => {
-    const {courseId, moduleId, topicId} = useParams();
+    const {courseId, moduleId, lessonId, topicId} = useParams();
     return (
         <Provider store={store}>
             <div>
@@ -28,7 +28,7 @@ const CourseEditor = ({history}) => {
                     <i onClick={() => history.goBack()}
                        className="fas fa-times"></i>
                     &nbsp;&nbsp;
-                    {courseId} {moduleId} {topicId}
+                    {courseId} {moduleId} {lessonId} {topicId}
                     {/*<Link to="/courses/table">*/}
                     {/*    <i className="fas fa-arrow-left"></i>*/}
                     {/*</Link>*/}

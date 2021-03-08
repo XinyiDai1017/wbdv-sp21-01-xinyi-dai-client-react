@@ -10,18 +10,13 @@ const lessonReducer = (state=initialState, action) => {
                 lessons: action.lessons
             }
         case "CREATE_LESSON":
-            return {
-                ...state,
+            const newState = {
                 lessons: [
                     ...state.lessons,
                     action.lesson
                 ]
             }
-        case "FIND_LESSONS":
-            return {
-                ...state,
-                lessons: action.lessons
-            }
+            return newState
         case "DELETE_LESSON":
             // alert("delete the module " + action.moduleToDelete.title)
             const newState1 = {
@@ -34,7 +29,7 @@ const lessonReducer = (state=initialState, action) => {
                 })
             }
             return newState1
-        case "UPDATE_MODULE":
+        case "UPDATE_LESSON":
             return {
                 lessons: state.lessons.map(m => {
                     if(m._id === action.lesson._id) {

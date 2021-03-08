@@ -14,22 +14,22 @@ const ModuleList = (
     }) => {
     const {courseId, moduleId} = useParams();
     useEffect(() => {
-        // alert(courseId)
-        findModulesForCourse(courseId)
-    }, [])
+        if (courseId !== 'undefined' && typeof courseId !== undefined) {
+            findModulesForCourse(courseId);
+        }
+    }, [courseId, moduleId, findModulesForCourse]);
     return(
         <div>
             {/*<h2>Modules</h2>*/}
             <ul className="list-group">
                 {
                     myModules.map(module =>
-                        <li className={`list-group-item ${module._id === moduleId ? 'active' : ''}`}>
+                        <li className={`list-group-item ${module._id === moduleId ? 'active' : ''}`} key={module._id}>
                             <EditableItem
-                                key={module._id}
                                 to={`/courses/editor/${courseId}/${module._id}`}
                                 updateItem={updateModule}
                                 deleteItem={deleteModule}
-                                active={true}
+                                active={module._id === moduleId}
                                 item={module}/>
                         </li>
                     )
@@ -45,6 +45,7 @@ const stpm = (state) => {
         myModules: state.moduleReducer.modules
     }
 }
+
 const dtpm = (dispatch) => {
     return {
         createModule: (courseId) => {

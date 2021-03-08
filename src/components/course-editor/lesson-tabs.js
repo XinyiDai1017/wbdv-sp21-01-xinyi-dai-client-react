@@ -6,27 +6,26 @@ import lessonService from "../../services/lesson-service";
 
 const LessonTabs = (
     {
-        myLessons=[
-            {_id: "123", title: "Lesson A"},
-            {_id: "123", title: "Lesson B"},
-            {_id: "123", title: "Lesson C"}
-        ],
-        createLesson=() => alert("Create Lesson 234"),
-        deleteLesson=(item) => alert("delete " + item._id),
+        myLessons=[],
+        createLesson,
+        deleteLesson,
         updateLesson,
-        findLessonsForModule=(moduleId) => console.log(moduleId),
+        findLessonsForModule,
     }) => {
     const {courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
+        console.log("LOAD LESSONS FOR MODULE: " + moduleId)
+        if(moduleId !== "undefined" && typeof moduleId !== undefined) {
             findLessonsForModule(moduleId)
-    }, [])
+        }
+    }, [moduleId, lessonId, findLessonsForModule]);
     return(
         <div>
             {/*<h2>Lessons</h2>*/}
             <ul className="nav nav-pills">
                 {
                     myLessons.map(lesson =>
-                        <li className="nav-item">
+                        <li className={`nav-item ${lesson._id === lessonId ? 'active' : ''}`} key={lesson._id}>
                             <EditableItem
                                 to={`/courses/editor/${courseId}/${moduleId}/${lesson._id}`}
                                 updateItem={updateLesson}
@@ -36,14 +35,14 @@ const LessonTabs = (
                         </li>
                     )
                 }
-                <li>
+                <li className="nav-item">
                     <i onClick={() => createLesson(moduleId)} className="fas fa-plus"></i>
                 </li>
             </ul>
         </div>)}
 
 const stpm = (state) => {
-    return{
+    return {
         myLessons: state.lessonReducer.lessons
     }
 }
