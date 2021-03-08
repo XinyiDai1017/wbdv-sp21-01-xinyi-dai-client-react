@@ -31,7 +31,7 @@ const CourseRow = (
                         <div>
                             <i className="fas fa-file-alt title-icons"></i>
                             &nbsp;
-                            <Link to="/courses/editor">
+                            <Link to={`/courses/editor/${course._id}`}>
                                 {title}
                             </Link>
                         </div>
