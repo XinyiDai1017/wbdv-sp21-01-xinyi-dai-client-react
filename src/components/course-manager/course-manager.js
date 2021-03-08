@@ -6,7 +6,6 @@ import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
 import './course-manager.css'
 
-
 class CourseManager extends React.Component {
     state = {
         courses: [],
@@ -156,9 +155,14 @@ class CourseManager extends React.Component {
                 {/*<Route path="/courses/editor"*/}
                 {/*       render={(props) => <CourseEditor props={props}/>}>*/}
                 {/*</Route>*/}
-                <Route path="/courses/editor"
+                <Route path={[
+                    "/courses/editor/:courseId",
+                    "/courses/editor/:courseId/:moduleId",
+                    "/courses/editor/:courseId/:moduleId/:lessonId"]}
+                       exact={true}
                        render={(props) => <CourseEditor {...props}/>}>
                 </Route>
+
                 <div className="fixed-bottom">
                     <Link to="/">
                         <i className="fas fa-2x fa-home float-left bottom-home"></i>
