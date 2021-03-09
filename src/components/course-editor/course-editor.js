@@ -37,7 +37,7 @@ const CourseEditor = ({history}) => {
                     <i onClick={() => history.goBack()}
                        className="fas fa-times"></i>
                     &nbsp;&nbsp;
-                    {cachedTitle} {moduleId} {lessonId} {topicId}
+                    {cachedTitle}
                     {/*<Link to="/courses/table">*/}
                     {/*    <i className="fas fa-arrow-left"></i>*/}
                     {/*</Link>*/}
