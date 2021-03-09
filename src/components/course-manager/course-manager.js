@@ -125,7 +125,7 @@ class CourseManager extends React.Component {
                         courses={this.state.courses}/>
                 </Route>
 
-                <Route path="/courses/grid">
+                <Route path="/courses/grid" exact={true}>
                     <div className="wbdv-sticky-top wbdv-padding-12px">
                         <div className="row">
                             <div className="col-1">
@@ -156,10 +156,10 @@ class CourseManager extends React.Component {
                 {/*       render={(props) => <CourseEditor props={props}/>}>*/}
                 {/*</Route>*/}
                 <Route path={[
-                    "/courses/editor/:courseId",
-                    "/courses/editor/:courseId/:moduleId",
-                    "/courses/editor/:courseId/:moduleId/:lessonId",
-                    "/courses/editor/:courseId/:moduleId/:lessonId/topicId"]}
+                    "/courses/:layout/edit/:courseId",
+                    "/courses/:layout/edit/:courseId/modules/:moduleId",
+                    "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId",
+                    "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId/topics/topicId"]}
                        exact={true}
                        render={(props) => <CourseEditor {...props}/>}>
                 </Route>

@@ -14,10 +14,10 @@ export const createModule = (courseId, module) =>
 export const findModulesForCourse = (courseId) =>
     fetch(`${COURSES_URL}/${courseId}/modules`)
         .then(response => response.json())
-//
-// export const findModule = (moduleId) =>
-//     fetch(`${MODULES_URL}/${moduleId}`)
-//         .then(response => response.json())
+
+export const findModule = (moduleId) =>
+    fetch(`${MODULES_URL}/${moduleId}`)
+        .then(response => response.json())
 
 export const updateModule = (moduleId, module) =>
     fetch(`${MODULES_URL}/${moduleId}`, {
@@ -38,7 +38,7 @@ export const deleteModule = (moduleId) =>
 const api = {
     createModule,
     findModulesForCourse,
-    // findModule,
+    findModule,
     updateModule,
     deleteModule
 };

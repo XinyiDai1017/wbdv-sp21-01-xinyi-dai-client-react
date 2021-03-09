@@ -14,10 +14,10 @@ export const createTopics = (lessonId, topic) =>
 export const findTopicsForLesson = (lessonId) =>
     fetch(`${LESSONS_URL}/${lessonId}/topics`)
         .then(response => response.json())
-//
-// export const findTopic = (topicId) =>
-//     fetch(`${TOPICS_URL}/${topicId}`)
-//         .then(response => response.json())
+
+export const findTopic = (topicId) =>
+    fetch(`${TOPICS_URL}/${topicId}`)
+        .then(response => response.json())
 
 export const updateTopic = (topicId, topic) =>
     fetch(`${TOPICS_URL}/${topicId}`, {
@@ -38,7 +38,7 @@ export const deleteTopic = (topicId) =>
 const api = {
     createTopics,
     findTopicsForLesson,
-    // findTopic,
+    findTopic,
     updateTopic,
     deleteTopic
 };

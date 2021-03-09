@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link, useParams} from "react-router-dom";
 import moduleReducer from "../../reducers/module-reducer";
 import lessonReducer from "../../reducers/lesson-reducer";
@@ -8,6 +8,7 @@ import {Provider} from "react-redux";
 import ModuleList from "./module-list";
 import LessonTabs from "./lesson-tabs";
 import TopicPills from "./topic-pills"
+import courseService from "../../services/course-service";
 
 const reducer = combineReducers({
     moduleReducer: moduleReducer,
@@ -20,7 +21,15 @@ const reducer = combineReducers({
 const store = createStore(reducer)
 
 const CourseEditor = ({history}) => {
-    const {courseId, moduleId, lessonId, topicId} = useParams();
+    const {layout, courseId, moduleId, lessonId, topicId} = useParams();
+    const [cachedTitle, setCachedTitle] = useState(" ");
+
+    useEffect(() => {
+        courseService.findCourseById(courseId).then((res) => {
+            setCachedTitle(res.title)
+        })
+    }, [courseId]);
+
     return (
         <Provider store={store}>
             <div>
@@ -28,7 +37,7 @@ const CourseEditor = ({history}) => {
                     <i onClick={() => history.goBack()}
                        className="fas fa-times"></i>
                     &nbsp;&nbsp;
-                    {courseId} {moduleId} {lessonId} {topicId}
+                    {cachedTitle} {moduleId} {lessonId} {topicId}
                     {/*<Link to="/courses/table">*/}
                     {/*    <i className="fas fa-arrow-left"></i>*/}
                     {/*</Link>*/}

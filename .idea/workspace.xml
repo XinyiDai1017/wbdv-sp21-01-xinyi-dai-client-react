@@ -4,15 +4,13 @@
     <list default="true" id="9510319f-9d38-463c-8328-1a71dac28a88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-card/course-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-card/course-card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/lesson-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/lesson-tabs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/module-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/module-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/topic-pills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/topic-pills.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/editable-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editable-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/lesson-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/lesson-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/module-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/module-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/topic-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/topic-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-row/course-row.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-row/course-row.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/lesson-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/lesson-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/module-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/module-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/topic-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/topic-service.js" afterDir="false" />
@@ -105,7 +103,8 @@
       <workItem from="1614840113423" duration="494000" />
       <workItem from="1614972460469" duration="4240000" />
       <workItem from="1615007125541" duration="5028000" />
-      <workItem from="1615074225348" duration="27967000" />
+      <workItem from="1615074225348" duration="30676000" />
+      <workItem from="1615258788093" duration="5016000" />
     </task>
     <servers />
   </component>
