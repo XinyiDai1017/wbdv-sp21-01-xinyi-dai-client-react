@@ -11,11 +11,15 @@ const TopicPills = (
         deleteTopic,
         updateTopic,
         findTopicsForLesson,
+        clearTopics,
     }) => {
     const {layout, courseId, moduleId, lessonId, topicId} = useParams();
     useEffect(() => {
-        if (lessonId !== 'undefined' && typeof lessonId !== undefined) {
+        if (moduleId !== "undefined" && typeof moduleId !== "undefined"
+            && lessonId !== 'undefined' && typeof lessonId !== "undefined") {
             findTopicsForLesson(lessonId);
+        }else{
+            clearTopics()
         }
     }, [moduleId, lessonId, topicId, findTopicsForLesson]);
     return(
@@ -77,7 +81,10 @@ const dtpm = (dispatch) => {
                     type: "FIND_TOPICS_FOR_LESSON",
                     topics: theTopics
                 }))
-        }
+        },
+        clearTopics: () => dispatch({
+            type:"CLEAR_TOPICS"
+        })
     }
 }
 

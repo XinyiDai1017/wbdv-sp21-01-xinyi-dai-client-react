@@ -21,7 +21,7 @@ const reducer = combineReducers({
 const store = createStore(reducer)
 
 const CourseEditor = () => {
-    const {layout, courseId,  lessonId, topicId} = useParams();
+    const {layout, courseId, moduleId, lessonId, topicId} = useParams();
     const [cachedTitle, setCachedTitle] = useState(" ");
 
     useEffect(() => {
