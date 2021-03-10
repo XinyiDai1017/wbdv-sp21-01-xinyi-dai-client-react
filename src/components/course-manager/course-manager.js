@@ -155,14 +155,14 @@ class CourseManager extends React.Component {
                 {/*<Route path="/courses/editor"*/}
                 {/*       render={(props) => <CourseEditor props={props}/>}>*/}
                 {/*</Route>*/}
-                <Route path={[
-                    "/courses/:layout/edit/:courseId",
-                    "/courses/:layout/edit/:courseId/modules/:moduleId",
-                    "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId",
-                    "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId/topics/topicId"]}
-                       exact={true}
-                       render={(props) => <CourseEditor {...props}/>}>
-                </Route>
+                {/*<Route path={[*/}
+                {/*    "/courses/:layout/edit/:courseId",*/}
+                {/*    "/courses/:layout/edit/:courseId/modules/:moduleId",*/}
+                {/*    "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId",*/}
+                {/*    "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId/topics/topicId"]}*/}
+                {/*       exact={true}*/}
+                {/*       render={(props) => <CourseEditor {...props}/>}>*/}
+                {/*</Route>*/}
 
                 <div className="fixed-bottom">
                     <Link to="/">

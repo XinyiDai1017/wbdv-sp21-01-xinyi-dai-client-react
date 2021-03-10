@@ -20,8 +20,8 @@ const reducer = combineReducers({
 // const store = createStore(lessonReducer)
 const store = createStore(reducer)
 
-const CourseEditor = ({history}) => {
-    const {layout, courseId, moduleId, lessonId, topicId} = useParams();
+const CourseEditor = () => {
+    const {layout, courseId,  lessonId, topicId} = useParams();
     const [cachedTitle, setCachedTitle] = useState(" ");
 
     useEffect(() => {
@@ -34,8 +34,9 @@ const CourseEditor = ({history}) => {
         <Provider store={store}>
             <div>
                 <h2>
-                    <i onClick={() => history.goBack()}
-                       className="fas fa-times"></i>
+                    <Link to={`/courses/${layout}`}
+                          className="fas fa-times">
+                    </Link>
                     &nbsp;&nbsp;
                     {cachedTitle}
                     {/*<Link to="/courses/table">*/}
