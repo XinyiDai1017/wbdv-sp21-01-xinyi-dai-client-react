@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {connect} from "react-redux";
 import EditableItem from "../editable-item";
 import {useParams} from "react-router-dom";
@@ -11,14 +11,18 @@ const LessonTabs = (
         deleteLesson,
         updateLesson,
         findLessonsForModule,
-        clearLessons
+        clearLessons,
+        findLesson,
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
+    const [enableAddButton, setEnableAddButton] = useState(false)
     useEffect(() => {
         console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
             findLessonsForModule(moduleId)
+            setEnableAddButton(true)
         }else {
+            setEnableAddButton(false)
             clearLessons()
         }
     }, [moduleId, lessonId, findLessonsForModule]);
@@ -39,9 +43,11 @@ const LessonTabs = (
                     )
                 }
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <li className="nav-item">
-                    <i onClick={() => createLesson(moduleId)} className="fas fa-plus fa-2x"></i>
-                </li>
+                { enableAddButton &&
+                    <li className="nav-item">
+                        <i onClick={() => createLesson(moduleId)} className="fas fa-plus fa-2x" style={{color:"#007bff"}}></i>
+                    </li>
+                }
             </ul>
         </div>)}
 
@@ -80,10 +86,15 @@ const dtpm = (dispatch) => {
                     lessons: theLessons
                 }))
         },
-        clearLessons: () =>
-            dispatch({
-                type: "CLEAR_LESSONS"
-            })
+        clearLessons: () => dispatch({
+                type:"CLEAR_LESSONS"
+        }),
+        findLesson: (lessonId) =>
+            lessonService.findLesson(lessonId)
+                .then(theLesson => dispatch({
+                    type: "FIND_LESSON",
+                    lesson: theLesson
+                }))
     }
 }
 

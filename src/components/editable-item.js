@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
 
@@ -28,21 +27,24 @@ const EditableItem = (
             {
                 editing &&
                 <>
-                    <input
-                        onChange={(e) =>
-                            setCachedItem({
-                                ...cachedItem,
-                                title: e.target.value
-                            })}
-                        value={cachedItem.title}/>
-                    <div className="float-right">
-                        <i onClick={() => deleteItem(item)} className="fas fa-times"></i>
-                        &nbsp;
-                        <i onClick={() => {
-                            setEditing(false)
-                            updateItem(cachedItem)
-                        }} className="fas fa-check"></i>
+                    <div className={`nav-link ${active?'active':''}`}>
+                        <input
+                            onChange={(e) =>
+                                setCachedItem({
+                                    ...cachedItem,
+                                    title: e.target.value
+                                })}
+                            value={cachedItem.title}/>
+                        <div className="float-right">
+                            <i onClick={() => deleteItem(item)} className="fas fa-times"></i>
+                            &nbsp;
+                            <i onClick={() => {
+                                setEditing(false)
+                                updateItem(cachedItem)
+                            }} className="fas fa-check"></i>
+                        </div>
                     </div>
+
                 </>
             }
         </>

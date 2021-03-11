@@ -44,6 +44,10 @@ const lessonReducer = (state=initialState, action) => {
                 ...state,
                 lessons: []
             }
+        case "FIND_LESSON":
+            return {
+                lessons: action.lessons
+            }
         default:
             return state
     }

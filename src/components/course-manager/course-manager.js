@@ -123,6 +123,11 @@ class CourseManager extends React.Component {
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
+                    <div className="fixed-bottom">
+                        <i onClick={this.addCourse}
+                           className="fas fa-plus-circle fa-4x float-right bottom-plus">
+                        </i>
+                    </div>
                 </Route>
 
                 <Route path="/courses/grid" exact={true}>
@@ -148,6 +153,11 @@ class CourseManager extends React.Component {
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
+                    <div className="fixed-bottom">
+                        <i onClick={this.addCourse}
+                           className="fas fa-plus-circle fa-4x float-right bottom-plus">
+                        </i>
+                    </div>
                 </Route>
                 {/*<Route path="/courses/editor">*/}
                 {/*    <CourseEditor/>*/}
@@ -168,9 +178,6 @@ class CourseManager extends React.Component {
                     <Link to="/">
                         <i className="fas fa-2x fa-home float-left bottom-home"></i>
                     </Link>
-                    <i onClick={this.addCourse}
-                       className="fas fa-plus-circle fa-4x float-right bottom-plus">
-                    </i>
                 </div>
             </div>
         )

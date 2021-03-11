@@ -43,6 +43,10 @@ const moduleReducer = (state=initialState, action) => {
                     }
                 })
             }
+        case "FIND_MODULE":
+            return {
+                modules: action.modules
+            }
         default:
             return state
     }

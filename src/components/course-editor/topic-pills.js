@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
 import EditableItem from "../editable-item";
 import {useParams} from "react-router-dom";
@@ -12,13 +12,17 @@ const TopicPills = (
         updateTopic,
         findTopicsForLesson,
         clearTopics,
+        theTopic,
     }) => {
     const {layout, courseId, moduleId, lessonId, topicId} = useParams();
+    const [enableAddButton, setEnableAddButton] = useState(false)
     useEffect(() => {
         if (moduleId !== "undefined" && typeof moduleId !== "undefined"
             && lessonId !== 'undefined' && typeof lessonId !== "undefined") {
             findTopicsForLesson(lessonId);
+            setEnableAddButton(true)
         }else{
+            setEnableAddButton(false)
             clearTopics()
         }
     }, [moduleId, lessonId, topicId, findTopicsForLesson]);
@@ -39,9 +43,11 @@ const TopicPills = (
                     )
                 }
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <li className="nav-item">
-                    <i onClick={() => createTopic(lessonId)} className="fas fa-plus fa-2x"></i>
-                </li>
+                {   enableAddButton &&
+                    <li className="nav-item">
+                        <i onClick={() => createTopic(lessonId)} className="fas fa-plus fa-2x" style={{color:"#007bff"}}></i>
+                    </li>
+                }
             </ul>
         </div>)}
 
@@ -84,7 +90,13 @@ const dtpm = (dispatch) => {
         },
         clearTopics: () => dispatch({
             type:"CLEAR_TOPICS"
-        })
+        }),
+        findTopic: (topicId) =>
+            topicService.findLesson(topicId)
+                .then(theTopic => dispatch({
+                    type: "FIND_TOPIC",
+                    topic: theTopic
+                }))
     }
 }
 

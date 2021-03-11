@@ -10,7 +10,8 @@ const ModuleList = (
         createModule=() => alert("Create Module 234"),
         deleteModule=(item) => alert("delete " + item._id),
         updateModule,
-        findModulesForCourse=(courseId) => console.log(courseId)
+        findModulesForCourse=(courseId) => console.log(courseId),
+        findModule
     }) => {
     const {layout, courseId, moduleId} = useParams();
     useEffect(() => {
@@ -35,7 +36,7 @@ const ModuleList = (
                     )
                 }
                 <li className="list-group-item" align="center">
-                    <i onClick={() => createModule(courseId)} className="fas fa-plus fa-2x "></i>
+                    <i onClick={() => createModule(courseId)} className="fas fa-plus fa-2x" style={{color:"#007bff"}}></i>
                 </li>
             </ul>
         </div>)}
@@ -74,7 +75,13 @@ const dtpm = (dispatch) => {
                     type: "FIND_MODULES_FOR_COURSE",
                     modules: theModules
                 }))
-        }
+        },
+        findModule: (moduleId) =>
+            moduleService.findModule(moduleId)
+                .then(theModule => dispatch({
+                    type: "FIND_MODULE",
+                    module: theModule
+                }))
     }
 }
 

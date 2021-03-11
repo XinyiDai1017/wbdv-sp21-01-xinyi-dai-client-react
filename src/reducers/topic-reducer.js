@@ -44,6 +44,10 @@ const topicReducer = (state=initialState, action) => {
                 ...state,
                 topics: []
             }
+        case "FIND_TOPIC":
+            return {
+                topics: action.topics
+            }
         default:
             return state
     }

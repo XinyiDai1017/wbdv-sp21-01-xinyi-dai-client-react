@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9510319f-9d38-463c-8328-1a71dac28a88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blank" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/lesson-tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/lesson-tabs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/module-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/module-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/course-editor/topic-pills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/topic-pills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/editable-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editable-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/lesson-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/lesson-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/module-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/module-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/topic-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/topic-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +108,12 @@
       <workItem from="1615318434395" duration="1689000" />
       <workItem from="1615321767866" duration="6227000" />
       <workItem from="1615360245652" duration="946000" />
-      <workItem from="1615362690609" duration="1236000" />
+      <workItem from="1615362690609" duration="7549000" />
+      <workItem from="1615411206753" duration="32000" />
+      <workItem from="1615411241098" duration="17000" />
+      <workItem from="1615411260186" duration="1972000" />
+      <workItem from="1615415536179" duration="636000" />
+      <workItem from="1615416274994" duration="2327000" />
     </task>
     <servers />
   </component>
