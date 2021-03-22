@@ -32,6 +32,15 @@ export const deleteWidget = (wid) =>
         method: 'DELETE'
     }).then(response => response.json());
 
+//optional
+// export const findAllWidgets = () =>
+//     fetch(`${WIDGETS_URL}/widgets`)
+//         .then(response => response.json())
+//
+// export const findWidgetById = (wid) =>
+//     fetch(`${WIDGETS_URL}/widgets/${wid}`)
+//         .then(response => response.json());
+
 const api = {
     createWidget,
     findWidgetsForTopic,
