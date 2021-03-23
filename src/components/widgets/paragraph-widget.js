@@ -13,14 +13,14 @@ const ParagraphWidget = (
             {
                 editing &&
                 <textarea
-                     onChange={(e) => {
-                         const newWidget = {...paragraphWidget};
-                         newWidget["text"] = e.target.value;
-                         setParagraphWidget(newWidget);
-                         setWidget(newWidget);
-                     }}
-                     value={paragraphWidget.text}
-                     className="form-control">
+                    onChange={(e) => {
+                        const newWidget = {...paragraphWidget};
+                        newWidget["text"] = e.target.value;
+                        setParagraphWidget(newWidget);
+                        setWidget(newWidget);
+                    }}
+                    value={paragraphWidget.text}
+                    className="form-control">
                 </textarea>
             }
             {

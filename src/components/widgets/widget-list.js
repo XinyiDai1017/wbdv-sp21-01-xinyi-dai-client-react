@@ -12,7 +12,7 @@ const WidgetList = (
         createWidget,
         deleteWidget,
         updateWidget,
-        findAllWidgetsForTopic,
+        findWidgetsForTopic,
         clearWidgets,
     }) => {
     const {layout, courseId, moduleId, lessonId, topicId} = useParams();
@@ -20,16 +20,17 @@ const WidgetList = (
     const [widget, setWidget] = useState({});
 
     useEffect(() => {
+        console.log("LOAD WIDGETS FOR TOPIC" + topicId)
         if (moduleId !== "undefined" && typeof moduleId !== "undefined"
             && lessonId !== 'undefined' && typeof lessonId !== "undefined"
             && topicId !== "undefined" && typeof topicId !== "undefined") {
-            findAllWidgetsForTopic(topicId);
+            findWidgetsForTopic(topicId);
             setEnableAddButton(true)
         }else{
             setEnableAddButton(false)
             clearWidgets()
         }
-    }, [topicId,findAllWidgetsForTopic, widget, setWidget, updateWidget]);
+    }, [topicId, moduleId, lessonId, findWidgetsForTopic, widget, setWidget, updateWidget]);
 
     return(
         <div>
@@ -103,40 +104,43 @@ const stpm = (state) => ({
     myWidgets: state.widgetReducer.widgets
 })
 
-const dtpm = (dispatch) => ({
-    createWidget: (topicId) => {
-        widgetService.createWidget(topicId,
-            {type: 'HEADING', size: 1, text: 'New Widget'})
-            .then(widgetFromServer => dispatch({
-                type: 'CREATE_WIDGET',
-                widget: widgetFromServer
-            }));
-    },
-    deleteWidget: (widget) => {
-        widgetService.deleteWidget(widget.id)
-            .then(() => dispatch({
-                type: 'DELETE_WIDGET',
-                widgetToDelete: widget
-            }))
-    },
-    updateWidget: (widgetId, widget) => {
-        widgetService.updateWidget(widgetId, widget)
-            .then(() => dispatch({
-                type: 'UPDATE_WIDGET',
-                widgetToUpdate: widget
-            }))
-    },
-    findAllWidgetsForTopic: (topicId) => {
-        widgetService.findWidgetsForTopic(topicId)
-            .then(actualWidgets => dispatch({
-                type: 'FIND_ALL_WIDGETS_FOR_TOPIC',
-                widgets: actualWidgets
-            }));
-    },
-    clearWidgets: () => dispatch({
-        type:"CLEAR_WIDGETS"
-    }),
-})
+const dtpm = (dispatch) => {
+    return {
+        findWidgetsForTopic: (topicId) => {
+            console.log("FIND WIDGETS FOR TOPIC" + topicId)
+            widgetService.findWidgetsForTopic(topicId)
+                .then(widgets => dispatch({
+                    type: "FIND_ALL_WIDGETS_FOR_TOPICS",
+                    widgets
+                }));
+        },
+        updateWidget: (wid, widget) => {
+            widgetService.updateWidget(wid, widget)
+                .then(status => {
+                    dispatch({
+                        type: "UPDATE_WIDGET",
+                        widget});
+                });
 
-export default connect(stpm, dtpm)
-(WidgetList);
+        },
+        createWidget: (topicId) => {
+            widgetService.createWidget(topicId,  {type: "HEADING", size: 1, text: "New Widget"})
+                .then(widgetFromServer => dispatch({
+                    type: 'CREATE_WIDGET',
+                    widget: widgetFromServer
+                }));
+        },
+        deleteWidget: (widgetToDelete) => {
+            widgetService.deleteWidget(widgetToDelete.id)
+                .then(status => dispatch({
+                    type: "DELETE_WIDGET",
+                    widgetToDelete
+                }));
+        },
+        clearWidgets:() => dispatch({
+            type:"CLEAR_WIDGETS"
+        }),
+    }
+};
+
+export default connect(stpm, dtpm)(WidgetList);

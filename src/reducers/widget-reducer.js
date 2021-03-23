@@ -10,31 +10,28 @@ const widgetReducer = (state=initialState, action) => {
                 widgets: action.widgets
             }
         case "CREATE_WIDGET":
-            const newState = {
-                widgets: [
-                    ...state.widgets,
-                    action.widget
-                ]
+            return {
+                ...state,
+                widgets: [...state.widgets, action.widget]
             }
-            return newState
         case "DELETE_WIDGET":
-            // alert("delete the widget " + action.widgetToDelete.id)
-            const newState1 = {
+            return {
                 widgets: state.widgets.filter(widget => {
-                    if(widget.id === action.widgetToDelete.id) {
-                        return false
+                    if (widget.id === action.widgetToDelete.id) {
+                        return false;
                     } else {
-                        return true
+                        return true;
                     }
                 })
             }
-            return newState1
-        case 'UPDATE_WIDGET':
+        case "UPDATE_WIDGET":
             return {
-                ...state,
                 widgets: state.widgets.map(w => {
-                    return w.id === action.widgetToUpdate.id
-                        ? action.widgetToUpdate : w;
+                    if(w.id === action.widget.id) {
+                        return action.widget;
+                    } else {
+                        return w
+                    }
                 })
             }
         case "CLEAR_WIDGETS":
