@@ -31,7 +31,7 @@ const WidgetList = (
             clearWidgets()
         }
     }, [topicId, moduleId, lessonId, findWidgetsForTopic, widget, setWidget, updateWidget]);
-
+    console.log('111: ', myWidgets);
     return(
         <div>
             {enableAddButton &&
@@ -52,7 +52,6 @@ const WidgetList = (
                                     }} className="fas fa-check float-right"></i>
                                     <i onClick={() => deleteWidget(_widget)} className="fas fa-trash float-right"></i>
                                 </>
-
                             }
                             {
                                 _widget.id !== widget.id &&
@@ -100,19 +99,22 @@ const WidgetList = (
     );
 }
 
-const stpm = (state) => ({
-    myWidgets: state.widgetReducer.widgets
-})
+const stpm = (state) => {
+    return {myWidgets: state.widgetReducer.widgets}
+}
 
 const dtpm = (dispatch) => {
     return {
         findWidgetsForTopic: (topicId) => {
             console.log("FIND WIDGETS FOR TOPIC" + topicId)
             widgetService.findWidgetsForTopic(topicId)
-                .then(widgets => dispatch({
-                    type: "FIND_ALL_WIDGETS_FOR_TOPICS",
-                    widgets
-                }));
+                .then(widgets => {
+                    console.log(widgets);
+                    dispatch({
+                        type: "FIND_ALL_WIDGETS_FOR_TOPICS",
+                        widgets
+                    })}
+                );
         },
         updateWidget: (wid, widget) => {
             widgetService.updateWidget(wid, widget)

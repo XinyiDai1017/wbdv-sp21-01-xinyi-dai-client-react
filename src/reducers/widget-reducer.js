@@ -4,7 +4,7 @@ const initialState = {
 
 const widgetReducer = (state=initialState, action) => {
     switch (action.type) {
-        case "FIND_ALL_WIDGETS_FOR_TOPIC":
+        case "FIND_ALL_WIDGETS_FOR_TOPICS":
             return {
                 ...state,
                 widgets: action.widgets
