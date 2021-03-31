@@ -10,10 +10,10 @@ const ImageWidget = (
 
     return (
         <div>
-            <h2>Image Widget</h2>
+            {/*<h2>Image Widget</h2>*/}
             {
                 !editing &&
-                <img width={widget.width} height={widget.height} src={widget.src}/>
+                <img width={imageWidget.width} height={imageWidget.height} src={imageWidget.src}/>
             }
             {
                 editing &&
@@ -22,16 +22,16 @@ const ImageWidget = (
                     <input
                         onChange={(e) => {
                             const newWidget = {...imageWidget};
-                            newWidget["text"] = e.target.value;
+                            newWidget["src"] = e.target.value;
                             setImageWidget(newWidget);
                             setWidget(newWidget);
                         }}
-                        value={imageWidget.url} className="form-control"/>
+                        value={imageWidget.src} className="form-control"/>
                     Image width
                     <input
                         onChange={(e) => {
                             const newWidget = {...imageWidget};
-                            newWidget["text"] = e.target.value;
+                            newWidget["width"] = e.target.value;
                             setImageWidget(newWidget);
                             setWidget(newWidget);
                         }}
@@ -40,7 +40,7 @@ const ImageWidget = (
                     <input
                         onChange={(e) => {
                             const newWidget = {...imageWidget};
-                            newWidget["text"] = e.target.value;
+                            newWidget["height"] = e.target.value;
                             setImageWidget(newWidget);
                             setWidget(newWidget);
                         }}
