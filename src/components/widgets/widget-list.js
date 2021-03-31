@@ -5,6 +5,8 @@ import ParagraphWidget from "./paragraph-widget";
 import {useParams} from "react-router-dom";
 import widgetService from "../../services/widget-service";
 import './widget-list.css';
+import ListWidget from "./list-widget";
+import ImageWidget from "./image-widget";
 
 const WidgetList = (
     {
@@ -68,9 +70,9 @@ const WidgetList = (
                                     <option value="HEADING">Heading</option>
                                     <option value="PARAGRAPH">Paragraph</option>
                                     <option value="VIDEO" disabled="disabled">Video</option>
-                                    <option value="IMAGE" disabled="disabled">Image</option>
-                                    <option value="LINK" disabled="disabled">Link</option>
-                                    <option value="LIST" disabled="disabled">List</option>
+                                    <option value="IMAGE">Image</option>
+                                    <option value="LINK"  disabled="disabled">Link</option>
+                                    <option value="LIST">List</option>
                                     <option value="HTML" disabled="disabled">HTML</option>
                                 </select>
                             }
@@ -90,7 +92,22 @@ const WidgetList = (
                                     widget={_widget.id === widget.id? widget : _widget}
                                 />
                             }
-
+                            {
+                                _widget.type === "LIST" &&
+                                <ListWidget
+                                    editing={_widget.id === widget.id}
+                                    setWidget={setWidget}
+                                    widget={_widget.id === widget.id? widget : _widget}
+                                />
+                            }
+                            {
+                                _widget.type === "IMAGE" &&
+                                <ImageWidget
+                                    editing={_widget.id === widget.id}
+                                    setWidget={setWidget}
+                                    widget={_widget.id === widget.id? widget : _widget}
+                                />
+                            }
                         </li>
                     )
                 }

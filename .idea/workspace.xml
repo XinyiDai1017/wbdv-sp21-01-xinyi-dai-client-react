@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -61,6 +61,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
@@ -119,7 +130,9 @@
       <workItem from="1616386271569" duration="253000" />
       <workItem from="1616386662602" duration="217000" />
       <workItem from="1616471819516" duration="9977000" />
-      <workItem from="1616541287041" duration="3334000" />
+      <workItem from="1616541287041" duration="3872000" />
+      <workItem from="1616624954772" duration="451000" />
+      <workItem from="1617139940881" duration="6162000" />
     </task>
     <servers />
   </component>
