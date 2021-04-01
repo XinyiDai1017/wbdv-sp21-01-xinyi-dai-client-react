@@ -1,4 +1,4 @@
-const WIDGETS_URL = "https://wbdv-xinyi-dai-java.herokuapp.com/api";
+const WIDGETS_URL = "http://localhost:8080/api";
 
 export const createWidget = (tid, widget) =>
     fetch(`${WIDGETS_URL}/topics/${tid}/widgets`, {
