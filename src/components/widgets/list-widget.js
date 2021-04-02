@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
 const ListWidget = (
     {
@@ -7,51 +7,44 @@ const ListWidget = (
         editing
     }) => {
     const [listWidget, setListWidget] = useState(widget);
-
     return (
+
         <div>
-            <h2>List Widget</h2>
-            {
-                !editing &&
-                <>
-                    {
-                        listWidget.ordered &&
-                        // ordered
-                        <ol>
-                            {
-                                widget.text.split("\n").map(item => {
-                                    return(
-                                        <li>{item}</li>
-                                    )
-                                })
-                            }
-                        </ol>
-                    }
-                    {
-                        !listWidget.ordered &&
-                        //not ordered
-                        <ul>
-                            {
-                                widget.text.split("\n").map(item => {
-                                    return(
-                                        <li>{item}</li>
-                                    )
-                                })
-                            }
-                        </ul>
-                    }
-                </>
-            }
-            {
-                editing &&
+            {!editing ? (
+                listWidget.widgetOrder ? (
+                    // ordered
+                    //https://reactjs.org/docs/lists-and-keys.html#keys
+                    <ol>
+                        {
+                            listWidget && listWidget.text && listWidget.text.split("\n").map((item, index) => {
+                                return (
+                                    <li key={index}>{item}</li>
+                                )
+                            })
+                        }
+                    </ol>
+                ) : (
+                    //not ordered
+                    <ul>
+                        {
+                            listWidget && listWidget.text && listWidget.text.split("\n").map((item, index) => {
+                                return (
+                                    <li key={index}>{item}</li>
+                                )
+                            })
+                        }
+                    </ul>
+                )
+            ) : (
                 <div>
                     <input
-                        checked={listWidget.ordered}
-                           onChange={e => setListWidget({
-                               ...listWidget,
-                               ordered: !listWidget.ordered
-                           })}
-                        type="checkbox"
+                        onChange={(e) => {
+                            const newWidget = {...listWidget};
+                            newWidget["widgetOrder"] = e.target.checked ? 1 : 0;
+                            setListWidget(newWidget);
+                            setWidget(newWidget);
+                        }}
+                        type="checkbox" checked={listWidget.widgetOrder}
                     /> Ordered
                     <br/>
                     List Items
@@ -62,11 +55,12 @@ const ListWidget = (
                             setListWidget(newWidget);
                             setWidget(newWidget);
                         }}
-                        rows={10} value={listWidget.text} className="form-control">
+                        rows={10} value={listWidget.text} placeholder={"one list item per line"}
+                        className="form-control">
                     </textarea>
                 </div>
-            }
-            {/*<textarea></textarea>*/}
+            )}
+
         </div>
     )
 }
