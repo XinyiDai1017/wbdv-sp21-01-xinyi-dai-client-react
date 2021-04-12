@@ -15,6 +15,7 @@ const Question = ({question}) => {
                 <MultipleChoiceQuestion
                     question={question}/>
             }
+            <br/>
         </div>
     )
 }
