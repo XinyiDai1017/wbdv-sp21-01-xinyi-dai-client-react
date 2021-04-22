@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9510319f-9d38-463c-8328-1a71dac28a88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quizzes/questions/multiple-choice-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quizzes/questions/multiple-choice-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quizzes/questions/true-false-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quizzes/questions/true-false-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quizzes/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quizzes/quiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/question-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/question-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/quiz-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/quiz-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/widget-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/widget-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,17 +63,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
@@ -144,6 +132,8 @@
       <workItem from="1617919890484" duration="4826000" />
       <workItem from="1618121158060" duration="1497000" />
       <workItem from="1618193909360" duration="9312000" />
+      <workItem from="1618972436605" duration="540000" />
+      <workItem from="1619052849816" duration="344000" />
     </task>
     <servers />
   </component>
